@@ -1,5 +1,6 @@
 def my_gems
   gem 'ancestry'
+  gem 'friendly_id', github: 'norman/friendly_id'
 end
 
 

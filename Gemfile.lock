@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: ec3464025ff2c412077b31d7bcb1c5bf07ad4c6e
+  specs:
+    friendly_id (5.0.0.rc3)
+      activerecord (~> 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -117,6 +124,7 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   coffee-rails (~> 4.0.0)
+  friendly_id!
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.0)
