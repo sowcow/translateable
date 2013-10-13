@@ -4,6 +4,7 @@ def my_gems
   gem 'slim-rails'
   gem 'zurb-foundation'
   gem 'activeadmin', github: 'gregbell/active_admin'
+  gem 'better_errors'
 end
 
 

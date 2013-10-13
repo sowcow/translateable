@@ -2,7 +2,8 @@ h1 Editing text
 
 == render 'form'
 
-= link_to 'Show', @text
-'|
-= link_to 'Back', texts_path
+ul
+  li = link_to 'Show', @text
+  li = link_to 'Destroy', @text, method: :delete, confirm: 'sure?', class: 'button'
+  li = link_to 'Back', texts_path
 

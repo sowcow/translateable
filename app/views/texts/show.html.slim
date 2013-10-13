@@ -1,13 +1,20 @@
 p#notice = notice
 
-table
+h1 = @text.title
+
+p = @text.body
+
+
+- @text.children.each do |child|
+  h2 = link_to child.title, child
+
+/table
   tr
     th title
     th body
   tr
     td = @text.title
     td = @text.body
-
 = link_to 'Edit', edit_text_path(@text)
 '|
 = link_to 'Back', texts_path
