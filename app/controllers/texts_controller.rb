@@ -4,7 +4,8 @@ class TextsController < ApplicationController
   # GET /texts
   # GET /texts.json
   def index
-    @texts = Text.all
+    #@texts = Text.all
+    @texts = Text.where ancestry: nil
   end
 
   # GET /texts/1

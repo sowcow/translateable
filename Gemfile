@@ -1,6 +1,9 @@
 def my_gems
   gem 'ancestry'
   gem 'friendly_id', github: 'norman/friendly_id'
+  gem 'slim-rails'
+  gem 'zurb-foundation'
+  gem 'activeadmin', github: 'gregbell/active_admin'
 end
 
 

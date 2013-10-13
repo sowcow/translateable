@@ -1,0 +1,13 @@
+p#notice = notice
+
+table
+  tr
+    th title
+    th body
+  tr
+    td = @text.title
+    td = @text.body
+
+= link_to 'Edit', edit_text_path(@text)
+'|
+= link_to 'Back', texts_path
