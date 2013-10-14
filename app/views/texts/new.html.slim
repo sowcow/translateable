@@ -1,5 +1,29 @@
-h1 New text
+/nav.top-bar
+  /ul.title-area
+    li.name
+      h1
+        a New text
+  /section.top-bar-section
+    ul.right
+      li
+        a olas!
 
-== render 'form'
 
-= link_to 'Back', texts_path, class: 'small round secondary button'
+/section role='main'
+  header
+    .row
+      h1 New text
+  .row
+    p
+  
+- content_for :header do 'New text' end
+.row
+  nav.breadcrumbs
+    a href='?' one
+    a href='?' two
+    a.current href='?' three
+
+
+.row
+  == render 'form'
+  /= link_to 'Back', texts_path, class: 'small round secondary button'

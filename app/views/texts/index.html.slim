@@ -1,15 +1,16 @@
-h1 Listing texts
+- content_for :header do 'Known texts' end
 
-table
-  tr
-    th
-
-  - @texts.each do |text|
+.row
+  table
     tr
-      td = link_to text.title, text
-      /td = link_to 'Edit', edit_text_path(text)
-      /td = link_to 'Destroy', text, :confirm => 'Are you sure?', :method => :delete
-
-br
-
-= link_to 'New Text', new_text_path
+      th
+  
+    - @texts.each do |text|
+      tr
+        td = link_to text.title, text
+        /td = link_to 'Edit', edit_text_path(text)
+        /td = link_to 'Destroy', text, :confirm => 'Are you sure?', :method => :delete
+  
+  br
+  
+  = link_to 'New Text', new_text_path

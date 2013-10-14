@@ -1,6 +1,9 @@
+- title = @is_root ? 'Known texts' : @text.title
+- content_for :header do title end
+
 p#notice = notice
 
-h1 = @text.title
+/h1 = @text.title
 
 p = @text.body
 
@@ -16,5 +19,5 @@ p = @text.body
     td = @text.title
     td = @text.body
 = link_to 'Edit', edit_text_path(@text)
-'|
-= link_to 'Back', texts_path
+/'|
+/= link_to 'Back', texts_path

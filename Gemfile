@@ -4,7 +4,11 @@ def my_gems
   gem 'slim-rails'
   gem 'zurb-foundation'
   gem 'activeadmin', github: 'gregbell/active_admin'
-  gem 'better_errors'
+
+  group :development do
+    gem 'better_errors'
+    gem 'binding_of_caller'
+  end
 end
 
 

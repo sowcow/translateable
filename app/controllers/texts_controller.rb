@@ -4,22 +4,25 @@ class TextsController < ApplicationController
   # GET /texts
   # GET /texts.json
   def index
-    #@texts = Text.all
-    @texts = Text.where ancestry: nil
+    # ransack-search etc
+    @texts = Text.all
   end
 
   # GET /texts/1
   # GET /texts/1.json
   def show
+    @is_root = @text == Text.root
   end
 
   # GET /texts/new
   def new
     @text = Text.new
+    @texts = @text.arrange_as_array
   end
 
   # GET /texts/1/edit
   def edit
+    @texts = @text.arrange_as_array
   end
 
   # POST /texts
@@ -70,6 +73,6 @@ class TextsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def text_params
-      params.require(:text).permit(:title, :body, :ancestry)
+      params.require(:text).permit(:title, :body, :parent_id)
     end
 end

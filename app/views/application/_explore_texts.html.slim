@@ -1,0 +1,14 @@
+h2 = link_to 'Explore texts', text_path(@root)
+
+table.full
+  - @texts.each do |text|
+    tr
+      td = link_to text.title, text
+
+form
+  div.row.collapse
+    div.small-9.columns
+      input type='text'
+    div.small-3.columns
+      span.postfix.radius.button
+        'find

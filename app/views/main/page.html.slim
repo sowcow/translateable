@@ -1,0 +1,17 @@
+- #content_for :header do '%Appname%' end
+- content_for :header do 'Pali' end
+
+.row
+  /.small-block-grid-2.large-block-grid-3
+  .large-4.small-6.columns
+    .panel
+      = render partial: 'explore_words'
+  .large-4.small-6.columns
+    .panel
+      = render partial: 'explore_texts'
+  .large-4.small-6.columns
+    .panel
+      h2 Add text
+  /.large-4.columns
+    .panel
+      h2 Link words
