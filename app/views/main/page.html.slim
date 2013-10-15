@@ -1,14 +1,14 @@
-- #content_for :header do '%Appname%' end
-- content_for :header do 'Pali' end
+- content_for :header do '...' end
+/- content_for :header do '%lingvam%' end
 
 .row
   /.small-block-grid-2.large-block-grid-3
-  .large-4.small-6.columns
+  .large-4.columns
     .panel
       = render partial: 'explore_words'
-  .large-4.small-6.columns
+  .large-4.columns
     .panel
       = render partial: 'explore_texts'
-  .large-4.small-6.columns
+  .large-4.columns
     .panel
       = render partial: 'contribute'

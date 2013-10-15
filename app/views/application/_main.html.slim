@@ -1,0 +1,19 @@
+section role='main'
+  header
+    .row
+      h1 style='display: inline-block'
+        a href='/'
+          /'⌂ 
+          = content_for :header
+        /style='display:inline-block'
+        - links = content_for(:header_links)
+        - links = links ? JSON.load(links) : []
+        /nav
+        /ul.inline-list
+        - links.each do |link|
+          /li = link_to *link, class: 'button'
+          = link_to *link, class: 'button tiny secondary round'
+  .row
+    /hr
+    p
+  == yield

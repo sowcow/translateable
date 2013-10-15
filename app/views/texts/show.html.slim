@@ -1,23 +1,30 @@
 - title = @is_root ? 'Known texts' : @text.title
 - content_for :header do title end
+- content_for :header_links do raw [['Edit',edit_text_path(@text)]].to_json end
 
-p#notice = notice
+- if notice
+  .row
+    p.success.round.label#notice = notice
 
 /h1 = @text.title
 
-p = @text.body
-
-
-- @text.children.each do |child|
-  h2 = link_to child.title, child
-
-/table
-  tr
-    th title
-    th body
-  tr
-    td = @text.title
-    td = @text.body
-= link_to 'Edit', edit_text_path(@text)
-/'|
-/= link_to 'Back', texts_path
+.row
+  p = @text.body
+  
+  
+  table.full
+    - @text.children.each do |child|
+      tr
+        td
+          h2 = link_to child.title, child
+/div 
+  /table
+    tr
+      th title
+      th body
+    tr
+      td = @text.title
+      td = @text.body
+  /= link_to 'Edit', edit_text_path(@text)
+  /'|
+  /= link_to 'Back', texts_path
