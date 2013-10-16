@@ -1,0 +1,12 @@
+/ yes, this :texts stuff is probably not for global partial
+- base ||= [['home', ?/], ['texts', texts_path]]
+- path = @text.try(:path).to_a.map { |x| [x.title, x] }
+- breadcrumbs = base + path
+- count = breadcrumbs.count
+- breadcrumbs.each.with_index do |data,i|
+  - if i == count - 1
+    /= link_to text.title, text, class: 'current'
+    = link_to *data, class: 'current'
+  - else
+    /= link_to text.title, text
+    = link_to *data

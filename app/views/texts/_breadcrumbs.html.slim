@@ -1,9 +1,0 @@
-= link_to 'home', '/'
-= link_to 'texts', texts_path
-- path = @text.path
-- count = path.count
-- path.each.with_index do |text,i|
-  - if i == count - 1
-    = link_to text.title, text, class: 'current'
-  - else
-    = link_to text.title, text
