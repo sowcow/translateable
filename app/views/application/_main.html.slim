@@ -2,18 +2,21 @@ section role='main'
   header
     .row
       h1 style='display: inline-block'
-        a href='/'
-          /'⌂ 
-          = content_for :header
+        /'⌂ 
+        = content_for :header
+        = content_for :header_links
         /style='display:inline-block'
-        - links = content_for(:header_links)
-        - links = links ? JSON.load(links) : []
+        /- links = content_for(:header_links)
+        /- links = links ? JSON.load(links) : []
         /nav
         /ul.inline-list
-        - links.each do |link|
+        /- links.each do |link|
           /li = link_to *link, class: 'button'
           = link_to *link, class: 'button tiny secondary round'
+  - if content_for? :breadcrumbs
+    = content_for :breadcrumbs
+  /- else
   .row
-    /hr
     p
+    /hr
   == yield

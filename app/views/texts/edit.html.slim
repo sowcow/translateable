@@ -1,9 +1,8 @@
-h1 Editing text
+- content_for :header do "editing #{@text.title}" end
+- content_for :header_links do
+  = header_link_to 'view', @text
+  = header_link_to 'add child', ??
+  = header_link_to 'destroy', @text, method: :destroy
 
-== render 'form'
-
-ul
-  li = link_to 'Show', @text
-  li = link_to 'Destroy', @text, method: :delete, confirm: 'sure?', class: 'button'
-  li = link_to 'Back', texts_path
-
+.row
+  == render 'form'

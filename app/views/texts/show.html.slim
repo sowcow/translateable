@@ -1,6 +1,21 @@
-- title = @is_root ? 'Known texts' : @text.title
+/- title = @is_root ? 'Known texts' : @text.title
+- title = @text.title
 - content_for :header do title end
-- content_for :header_links do raw [['Edit',edit_text_path(@text)]].to_json end
+- content_for :header_links do
+  = header_link_to 'edit', edit_text_path(@text)
+
+- content_for :breadcrumbs do
+  nav.breadcrumbs
+    / Presenters please!!!
+    = link_to 'home', '/'
+    - path = @text.path[0..-1]
+    - count = path.count
+    - path.each.with_index do |text,i|
+      - if i == count - 1
+        = link_to text.title, text, class: 'current'
+      - else
+        = link_to text.title, text
+
 
 - if notice
   .row
@@ -8,15 +23,16 @@
 
 /h1 = @text.title
 
-.row
+.row    
   p = @text.body
   
   
+.row  
   table.full
     - @text.children.each do |child|
       tr
         td
-          h2 = link_to child.title, child
+          = link_to child.title, child
 /div 
   /table
     tr
