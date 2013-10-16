@@ -1,8 +1,8 @@
 - content_for :header do "editing #{@text.title}" end
 - content_for :header_links do
   = header_link_to 'view', @text
-  = header_link_to 'add child', ??
-  = header_link_to 'destroy', @text, method: :destroy
+  = header_link_to 'add child', new_text_path(text: {parent_id: @text.friendly_id})
+  = header_link_to 'destroy', @text, method: :delete
 
 .row
   == render 'form'

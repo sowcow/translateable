@@ -11,12 +11,11 @@ class TextsController < ApplicationController
   # GET /texts/1
   # GET /texts/1.json
   def show
-    @is_root = @text == Text.root
   end
 
   # GET /texts/new
   def new
-    @text = Text.new
+    @text = Text.new text_params
     @texts = @text.arrange_as_array
   end
 

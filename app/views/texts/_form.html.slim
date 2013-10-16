@@ -11,7 +11,7 @@
   = f.inputs do
     = f.input :title
     = f.input :body
-    = f.input :parent_id, as: :select, collection: @texts, label: :parent
+    = f.input :parent_id, as: :select, collection: @texts, label: :parent, include_blank: false
     /= f.select :parent_id, @texts, label: 'parent', member_label: 'parent_id'
 
     /= f.select :parent_id, [['US', 2], ['Canada', 3]]
