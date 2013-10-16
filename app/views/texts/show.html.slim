@@ -1,27 +1,12 @@
-/- title = @is_root ? 'Known texts' : @text.title
-- title = @text.title
-- content_for :header do title end
+- content_for :header do @title end
 - content_for :header_links do
   = header_link_to 'edit', edit_text_path(@text)
-
 - content_for :breadcrumbs do
-  nav.breadcrumbs
-    / Presenters please!!!
-    = link_to 'home', '/'
-    - path = @text.path[0..-1]
-    - count = path.count
-    - path.each.with_index do |text,i|
-      - if i == count - 1
-        = link_to text.title, text, class: 'current'
-      - else
-        = link_to text.title, text
-
+  = render partial: 'breadcrumbs'
 
 - if notice
   .row
     p.success.round.label#notice = notice
-
-/h1 = @text.title
 
 .row    
   p = @text.body
@@ -33,14 +18,3 @@
       tr
         td
           = link_to child.title, child
-/div 
-  /table
-    tr
-      th title
-      th body
-    tr
-      td = @text.title
-      td = @text.body
-  /= link_to 'Edit', edit_text_path(@text)
-  /'|
-  /= link_to 'Back', texts_path
