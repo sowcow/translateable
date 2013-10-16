@@ -15,7 +15,7 @@ class TextsController < ApplicationController
 
   # GET /texts/new
   def new
-    @text = Text.new text_params
+    @text = params[:text] ? Text.new(text_params) : Text.new
     @texts = @text.arrange_as_array
   end
 

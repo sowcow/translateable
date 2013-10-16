@@ -1,4 +1,7 @@
 - content_for :header do 'New text' end
+- path = @text.try(:path) || []
+- path = path.empty?? [] : [:texts] + path
+- breadcrumbs :home, *path, :new
 
 .row
   == render 'form'

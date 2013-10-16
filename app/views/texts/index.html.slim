@@ -1,6 +1,5 @@
-- content_for :header do 'all texts' end
-- content_for :breadcrumbs do
-  = render partial: 'breadcrumbs'
+- content_for :header do 'listing texts, chapters, categories' end
+- breadcrumbs :home, :texts
 
 .row
   table
@@ -10,5 +9,3 @@
     - @texts.each do |text|
       tr
         td = link_to text.title, text
-        /td = link_to 'Edit', edit_text_path(text)
-        /td = link_to 'Destroy', text, :confirm => 'Are you sure?', :method => :delete
