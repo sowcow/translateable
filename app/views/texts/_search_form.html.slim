@@ -1,0 +1,9 @@
+- q = @q
+
+= search_form_for q do |f|
+  .row.collapse
+    /= f.label :title_or_body_cont
+    .small-9.columns
+      = f.text_field :title_or_body_cont, placeholder: 'title or body contains'
+    .small-3.columns  
+      = f.submit class: 'postfix radius secondary button', value: 'find'

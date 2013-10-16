@@ -4,8 +4,8 @@ class TextsController < ApplicationController
   # GET /texts
   # GET /texts.json
   def index
-    # ransack-search etc
-    @texts = Text.all
+    @q = Text.search params[:q]
+    @texts = @q.result distinct: true
   end
 
   # GET /texts/1

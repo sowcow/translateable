@@ -11,6 +11,7 @@ def my_gems
   end
 
   gem 'thin'
+  gem 'ransack'
 end
 
 

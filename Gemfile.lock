@@ -209,6 +209,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.0)
+  ransack
   sass-rails (~> 4.0.0)
   sdoc
   slim-rails

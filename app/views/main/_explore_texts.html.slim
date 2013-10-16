@@ -5,11 +5,5 @@ table.full
     tr
       td = link_to text.title, text
 
-form method='get' action='/texts'
-  div.row.collapse
-      div.small-9.columns
-        input type='text' name='q'
-      div.small-3.columns
-        /span.postfix.radius.button.secondary
-        input.postfix.radius.button.secondary type='submit' value='find'
-          /a href=''find
+
+= render partial: '/texts/search_form'

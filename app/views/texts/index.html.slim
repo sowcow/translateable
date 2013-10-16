@@ -1,9 +1,14 @@
 - content_for :header do 'listing texts, chapters, categories' end
 - breadcrumbs :home, :texts
 
+
+.row.large-4
+  = render partial: 'search_form'
+
+
 .row
-  table
-    tr
+  table.full
+    /tr
       th
   
     - @texts.each do |text|
